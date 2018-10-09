@@ -5,6 +5,10 @@
  */
 
 #include <ESP8266WiFi.h>
+
+#define WIFI_SSID "SSID"
+#define WIFI_PASSWORD "PASSWORD" 
+
 const byte ledPin = LED_BUILTIN;
 const byte interruptPin = 14;
 long previousMillis = 0;
@@ -15,7 +19,7 @@ const long interval = 600000; //Await 10 minutes
  * Connected in WIFI
  */
 void initWiFi() {
-   WiFi.begin( "SSID_NAME", "PASSWORD");
+   WiFi.begin( WIFI_SSID,  WIFI_PASSWORD);
    while(WiFi.status() != WL_CONNECTED) {
       digitalWrite(ledPin,  HIGH);
       delay(500);
